@@ -2,6 +2,10 @@ package com.spring.test.api;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +24,13 @@ import com.spring.test.api.model.User;
 @RestController
 @CrossOrigin(origins="*")
 public class RegistrationServiceApplication {
+	
+	Log logger = LogFactory.getLog(RegistrationServiceApplication.class);
+	
+	@PostConstruct
+	public void init() {
+		logger.info("Application Execution Started.....");
+	}
 
 	@Autowired
 	private UserRepository repository;
