@@ -1,2 +1,0 @@
-# applicationstash
-FullStack Application
